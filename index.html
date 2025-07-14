@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Auditoría y Control de Gestión</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .semestre {
+      margin-bottom: 30px;
+    }
+    .ramo {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px 15px;
+      margin: 8px 0;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .ramo:hover {
+      background-color: #f0f8ff;
+    }
+    .detalle {
+      display: none;
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Plan de Formación - Auditoría e Ingeniería en Control de Gestión</h1>
+
+<!-- Aquí irán todos los semestres -->
+
+<script>
+  const malla = {
+    "I Semestre": [
+      ["Introducción a la Carrera", "Ninguno"],
+      ["Fundamento de la Contabilidad", "Ninguno"],
+      ["Comunicación Oral y Escrita I", "Ninguno"],
+      ["Administración", "Ninguno"],
+      ["Economía", "Ninguno"],
+      ["Matemática", "Ninguno"],
+      ["Inglés I", "Ninguno"]
+    ],
+    "II Semestre": [
+      ["Sistemas de Información Contable", "Fundamento de la Contabilidad"],
+      ["Comunicación Oral y Escrita II", "Comunicación Oral y Escrita I"],
+      ["Introducción al Derecho y Derecho Comercial", "Ninguno"],
+      ["Entorno Económico de los Negocios", "Economía"],
+      ["Estadística I", "Matemática"],
+      ["Inglés II", "Inglés I"]
+    ],
+    "III Semestre": [
+      ["Metodología Contable Específica", "Sistemas de Información Contable"],
+      ["Autogestión del Aprendizaje", "Comunicación Oral y Escrita II"],
+      ["Introducción al Derecho y Derecho Comercial", "Ninguno"],
+      ["Entorno Económico de los Negocios", "Economía"],
+      ["Estadística I", "Matemática"],
+      ["Cálculo", "Matemática"],
+      ["Inglés III", "Inglés II"]
+    ],
+    "IV Semestre": [
+      ["Módulo de Integración", "Introducción a la Carrera, Metodología Contable Específica"],
+      ["Estados Financieros para Decisiones Estratégicas", "Metodología Contable Específica"],
+      ["Trabajo en Equipo y Desarrollo de Habilidades Sociales", "Autogestión del Aprendizaje"],
+      ["Derecho Laboral", "Introducción al Derecho y Derecho Comercial"],
+      ["Optimización", "Entorno Económico de los Negocios"],
+      ["Estadística II", "Estadística I"],
+      ["Inglés IV", "Inglés III"]
+    ],
+    "V Semestre": [
+      ["Diseño y Desarrollo de Sistemas de Información", "Sistemas de Información Contable"],
+      ["Diagnóstico Financiero", "Metodología Contable Específica"],
+      ["Procedimientos de Auditoría", "Metodología Contable Específica"],
+      ["Comprensión de Contextos Sociales", "Trabajo en Equipo y Desarrollo de Habilidades Sociales"],
+      ["Fundamentos de Costos", "Metodología Contable Específica"],
+      ["Fundamentos de los Impuestos", "Introducción al Derecho y Derecho Comercial"],
+      ["Inglés V", "Inglés IV"]
+    ],
+    "VI Semestre": [
+      ["Implementación de Sistemas de Información", "Diseño y Desarrollo de Sistemas de Información"],
+      ["Valorización de Instrumentos Financieros", "Diagnóstico Financiero"],
+      ["Control Interno", "Procedimientos de Auditoría"],
+      ["Comprensión de Contextos Culturales", "Comprensión de Contextos Sociales"],
+      ["Costo para Decisiones Estratégicas", "Fundamentos de Costos"],
+      ["Aplicación de los Impuestos", "Fundamentos de los Impuestos"],
+      ["Inglés VI", "Inglés V"]
+    ],
+    "VII Semestre": [
+      ["Valor Económico e Inversión Real", "Valorización de Instrumentos Financieros"],
+      ["Auditoría Financiera", "Control Interno"],
+      ["Ética y Responsabilidad Social", "Comprensión de Contextos Culturales"],
+      ["Gestión de RR.HH", "Administración"],
+      ["Planificación Tributaria", "Aplicación de los Impuestos"],
+      ["Formulación e Implementación Estratégica", "Costo para Decisiones Estratégicas"]
+    ],
+    "VIII Semestre": [
+      ["Módulo de Integración II", "Módulo de Integración, Valor Económico e Inversión Real"],
+      ["Auditoría de Sistemas", "Auditoría Financiera, Implementación de Sistemas de Información"],
+      ["Valorización de Activos", "Valor Económico e Inversión Real"],
+      ["Responsabilidad Social", "Ética y Responsabilidad Social"],
+      ["Auditoría y Reclamaciones Tributarias", "Planificación Tributaria"],
+      ["Sistemas de Control de Gestión", "Formulación e Implementación Estratégica"]
+    ],
+    "IX Semestre": [
+      ["Gestión Estratégica de Sistemas de Información", "Auditoría de Sistemas"],
+      ["Formulación y Evaluación de Proyectos", "Valor Económico e Inversión Real"],
+      ["Gestión de Procesos de Negocios", "Formulación e Implementación Estratégica"],
+      ["Control de Gestión Estratégico", "Sistemas de Control de Gestión"]
+    ],
+    "X Semestre": [
+      ["Electivo I", "Módulo de Integración II"],
+      ["Proyecto Memoria", "Módulo de Integración II"],
+      ["Control de Proyectos", "Formulación y Evaluación de Proyectos"],
+      ["Marketing Estratégico", "Formulación e Implementación Estratégica"]
+    ],
+    "XI Semestre": [
+      ["Electivo II", "Electivo I"],
+      ["Memoria", "Control de Proyectos"],
+      ["Deportivo I", "Ninguno"],
+      ["Deportivo II", "Ninguno"]
+    ]
+  };
+
+  for (const [semestre, ramos] of Object.entries(malla)) {
+    document.write(`<div class="semestre"><h2>${semestre}</h2>`);
+    ramos.forEach(([nombre, requisito], i) => {
+      const id = `${semestre.replace(/\s/g, '')}_${i}`;
+      document.write(`
+        <div class="ramo" onclick="toggle('${id}')">
+          ${nombre}
+          <div class="detalle" id="${id}">
+            <strong>Prerrequisito:</strong> ${requisito}
+          </div>
+        </div>
+      `);
+    });
+    document.write(`</div>`);
+  }
+
+  function toggle(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>
