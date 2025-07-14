@@ -1,0 +1,65 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px;
+  background-color: #fff8f6;
+  margin: 0;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.semestre {
+  flex: 0 0 220px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.semestre h2 {
+  font-size: 1.1em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ramo {
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.ramo.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ramo.tachado {
+  text-decoration: line-through;
+  background-color: #ccc !important;
+  color: #444 !important;
+}
+
+.color-0 { background-color: #e53935; }  /* rojo */
+.color-1 { background-color: #fb8c00; }  /* naranja */
+.color-2 { background-color: #fdd835; }  /* amarillo */
+.color-3 { background-color: #43a047; }  /* verde */
+.color-4 { background-color: #1e88e5; }  /* azul */
+.color-5 { background-color: #5e35b1; }  /* índigo */
+.color-6 { background-color: #8e24aa; }  /* violeta */
