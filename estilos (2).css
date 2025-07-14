@@ -1,0 +1,77 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.semestre {
+  flex: 0 0 220px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.semestre h2 {
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #eee;
+  padding: 5px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.ramo {
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease;
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.ramo.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ramo.tachado {
+  text-decoration: line-through;
+  background-color: #ccc !important;
+  color: #555 !important;
+}
+
+.detalle {
+  font-size: 0.8em;
+  color: #222;
+  margin-top: 4px;
+}
+
+.color-0 { background-color: #e53935; } /* rojo */
+.color-1 { background-color: #fb8c00; } /* naranja */
+.color-2 { background-color: #fdd835; } /* amarillo */
+.color-3 { background-color: #43a047; } /* verde */
+.color-4 { background-color: #1e88e5; } /* azul */
+.color-5 { background-color: #5e35b1; } /* índigo */
+.color-6 { background-color: #8e24aa; } /* violeta */
